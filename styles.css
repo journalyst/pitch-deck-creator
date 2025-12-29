@@ -114,6 +114,68 @@ button[type="submit"]:hover {
     color: #6b7280;
     margin: 0;
 }
+.email-paragraph-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px;
+    background: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+}
+.paragraph-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.paragraph-title {
+    margin: 0;
+    color: #1f2937;
+    font-size: 18px;
+}
+.paragraph-actions {
+    display: flex;
+    gap: 8px;
+}
+.btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.btn-edit {
+    background: #e5e7eb;
+    color: #374151;
+}
+.btn-edit:hover {
+    background: #d1d5db;
+}
+.btn-copy {
+    background: #10b981;
+    color: white;
+}
+.btn-copy:hover {
+    background: #059669;
+}
+.paragraph-content {
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #1f2937;
+    min-height: 60px;
+    transition: border-color 0.2s;
+}
+.paragraph-content:focus {
+    outline: none;
+    border-color: #667eea;
+    background: #fff;
+}
 .section-header {
     display: flex;
     justify-content: space-between;

@@ -32,12 +32,46 @@ document.getElementById('investor-form').addEventListener('submit', async functi
     }
 });
 
+let isEditingParagraph = false;
+
 function renderSummary(item) {
     document.getElementById('investor-name-display').textContent = item.investor || 'Unknown investor';
     document.getElementById('email-handle').textContent = item['email-handle'] ? 'Email: ' + item['email-handle'] : 'Email handle not found';
     document.getElementById('linkedin-handle').textContent = item['linkedin-handle'] ? 'LinkedIn: ' + item['linkedin-handle'] : 'LinkedIn handle not found';
     document.getElementById('twitter-handle').textContent = item['twitter-handle'] ? 'Twitter: ' + item['twitter-handle'] : 'Twitter handle not found';
     document.getElementById('instagram-handle').textContent = item['instagram-handle'] ? 'Instagram: ' + item['instagram-handle'] : 'Instagram handle not found';
+    document.getElementById('email-paragraph').textContent = item.email_paragraph || 'No email paragraph available.';
+}
+
+function toggleEditParagraph() {
+    const content = document.getElementById('email-paragraph');
+    const editBtn = document.querySelector('.paragraph-actions .btn-edit');
+    
+    if (isEditingParagraph) {
+        content.contentEditable = 'false';
+        editBtn.textContent = 'Edit';
+        isEditingParagraph = false;
+    } else {
+        content.contentEditable = 'true';
+        content.focus();
+        editBtn.textContent = 'Save';
+        isEditingParagraph = true;
+    }
+}
+
+function copyParagraph() {
+    const content = document.getElementById('email-paragraph').textContent;
+    navigator.clipboard.writeText(content).then(() => {
+        const copyBtn = document.querySelector('.paragraph-actions .btn-copy');
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = 'Copied!';
+        setTimeout(() => {
+            copyBtn.textContent = originalText;
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert('Failed to copy to clipboard');
+    });
 }
 
 function renderFindings(findings) {

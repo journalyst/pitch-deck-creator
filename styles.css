@@ -7,156 +7,194 @@ body {
     min-height: 100vh;
     margin: 0;
     padding: 20px;
-    color: #333;
+    color: #1a202c;
 }
 .container {
-    max-width: 800px;
+    max-width: 960px;
     margin: 0 auto;
-    background: white;
+    background: #fff;
     border-radius: 16px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
     overflow: hidden;
 }
 .header {
     background: #f8f9fa;
-    padding: 30px;
-    text-align: center;
+    padding: 32px;
+    text-align: left;
     border-bottom: 1px solid #e9ecef;
 }
 .header h1 {
+    margin: 0 0 8px;
+    color: #1f2937;
+    font-weight: 700;
+}
+.subhead {
     margin: 0;
-    color: #2d3748;
-    font-weight: 600;
+    color: #4b5563;
 }
 .form-section {
-    padding: 30px;
+    padding: 28px 32px;
     border-bottom: 1px solid #e9ecef;
 }
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #4a5568;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
 }
 input[type="text"] {
     width: 100%;
-    padding: 12px 16px;
-    border: 2px solid #e2e8f0;
-    border-radius: 8px;
+    padding: 12px 14px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
     font-size: 16px;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 input[type="text"]:focus {
     outline: none;
     border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
 }
 button[type="submit"] {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 12px 24px;
+    padding: 12px 20px;
     border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 500;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 button[type="submit"]:hover {
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
 }
 .loading {
     display: none;
     text-align: center;
-    padding: 20px;
-    color: #718096;
+    padding: 20px 32px;
+    color: #4b5563;
 }
 .results {
     display: none;
-    padding: 30px;
+    padding: 28px 32px 32px;
 }
-.message-card {
-    background: #f8f9fa;
+.investor-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
-    padding: 20px;
+    padding: 18px;
+    background: #f9fafb;
     margin-bottom: 20px;
-    border: 1px solid #e9ecef;
 }
-.message-header {
+.investor-summary h2 {
+    margin: 4px 0 0;
+    font-size: 22px;
+}
+.handles {
+    min-width: 280px;
+}
+.handle-row {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 6px;
+    word-break: break-all;
+}
+.label {
+    font-size: 13px;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin: 0;
+}
+.section-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 }
-.platform-name {
+.section-title {
+    margin: 6px 0 0;
+    color: #1f2937;
+}
+.pill {
+    background: #eef2ff;
+    color: #4338ca;
+    border-radius: 999px;
+    padding: 6px 12px;
     font-weight: 600;
-    color: #2d3748;
+    font-size: 13px;
+}
+.findings-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+}
+.finding-card {
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    background: #fff;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.04);
+}
+.finding-top {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-}
-.platform-name::before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border-radius: 50%;
-}
-.email .platform-name::before { background: #3182ce; }
-.linkedin .platform-name::before { background: #0077b5; }
-.twitter .platform-name::before { background: #1da1f2; }
-.instagram .platform-name::before { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
-.handle {
-    font-size: 14px;
-    color: #718096;
     margin-bottom: 10px;
 }
-.message-content {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 15px;
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
+.rank {
+    font-weight: 700;
+    color: #111827;
+}
+.type-badge {
+    background: #ecfeff;
+    color: #0ea5e9;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.summary {
+    margin: 6px 0 10px;
+    color: #1f2937;
+    line-height: 1.5;
+}
+.meta {
+    font-size: 13px;
+    color: #6b7280;
+    margin: 4px 0;
+}
+.quote {
+    background: #f9fafb;
+    border-left: 3px solid #667eea;
+    padding: 8px 10px;
+    margin: 8px 0 10px;
+    color: #374151;
+    font-style: italic;
     white-space: pre-wrap;
-    min-height: 100px;
 }
-.message-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-.btn {
-    padding: 8px 16px;
-    border: none;
-    border-radius: 6px;
+.source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: none;
     font-size: 14px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
 }
-.btn-edit {
-    background: #e2e8f0;
-    color: #4a5568;
+.source-link:hover {
+    text-decoration: underline;
 }
-.btn-edit:hover {
-    background: #cbd5e0;
-}
-.btn-copy {
-    background: #48bb78;
-    color: white;
-}
-.btn-copy:hover {
-    background: #38a169;
-}
-.btn-save {
-    background: #3182ce;
-    color: white;
-}
-.btn-save:hover {
-    background: #2c5282;
-}
-.editing .message-content {
-    border-color: #667eea;
+@media (max-width: 640px) {
+    .investor-summary { flex-direction: column; align-items: flex-start; }
+    .handles { width: 100%; }
 }

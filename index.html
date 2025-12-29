@@ -3,71 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investor Outreach Generator</title>
+    <title>Investor Insight Viewer</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Investor Outreach Generator</h1>
+            <h1>Investor Insight Viewer</h1>
+            <p class="subhead">Fetch concise findings and handles for fast outreach prep.</p>
         </div>
         <div class="form-section">
             <form id="investor-form">
                 <div class="form-group">
-                    <label for="investor-name">Investor Name:</label>
+                    <label for="investor-name">Investor Name</label>
                     <input type="text" id="investor-name" name="name" required placeholder="Enter investor name">
                 </div>
-                <button type="submit">Generate Outreach Messages</button>
+                <button type="submit">Fetch Findings</button>
             </form>
         </div>
-        <div id="loading" class="loading">Generating messages...</div>
+        <div id="loading" class="loading">Gathering latest findings...</div>
         <div id="results" class="results">
-            <div class="message-card email">
-                <div class="message-header">
-                    <div class="platform-name">Email</div>
+            <div class="investor-summary">
+                <div>
+                    <p class="label">Investor</p>
+                    <h2 id="investor-name-display"></h2>
                 </div>
-                <div class="handle" id="email-handle"></div>
-                <div class="message-content" id="email-subject" contenteditable="false"><strong>Subject:</strong> </div>
-                <div class="message-content" id="email-body" contenteditable="false"></div>
-                <div class="message-actions">
-                    <button class="btn btn-edit" onclick="toggleEdit('email')">Edit</button>
-                    <button class="btn btn-copy" onclick="copyContent('email')">Copy</button>
-                </div>
-            </div>
-            <div class="message-card linkedin">
-                <div class="message-header">
-                    <div class="platform-name">LinkedIn</div>
-                </div>
-                <div class="handle" id="linkedin-handle"></div>
-                <div class="message-content" id="linkedin-message" contenteditable="false"></div>
-                <div class="message-actions">
-                    <button class="btn btn-edit" onclick="toggleEdit('linkedin')">Edit</button>
-                    <button class="btn btn-copy" onclick="copyContent('linkedin')">Copy</button>
+                <div class="handles">
+                    <div class="handle-row" id="email-handle"></div>
+                    <div class="handle-row" id="linkedin-handle"></div>
+                    <div class="handle-row" id="twitter-handle"></div>
+                    <div class="handle-row" id="instagram-handle"></div>
                 </div>
             </div>
-            <div class="message-card twitter">
-                <div class="message-header">
-                    <div class="platform-name">Twitter</div>
+            <div class="section-header">
+                <div>
+                    <p class="label">Top Findings</p>
+                    <h3 class="section-title">Highlights to mention in outreach</h3>
                 </div>
-                <div class="handle" id="twitter-handle"></div>
-                <div class="message-content" id="twitter-message" contenteditable="false"></div>
-                <div class="message-actions">
-                    <button class="btn btn-edit" onclick="toggleEdit('twitter')">Edit</button>
-                    <button class="btn btn-copy" onclick="copyContent('twitter')">Copy</button>
-                </div>
+                <div class="pill" id="findings-count"></div>
             </div>
-            <div class="message-card instagram">
-                <div class="message-header">
-                    <div class="platform-name">Instagram</div>
-                </div>
-                <div class="handle" id="instagram-handle"></div>
-                <div class="message-content" id="instagram-message" contenteditable="false"></div>
-                <div class="message-actions">
-                    <button class="btn btn-edit" onclick="toggleEdit('instagram')">Edit</button>
-                    <button class="btn btn-copy" onclick="copyContent('instagram')">Copy</button>
-                </div>
-            </div>
+            <div id="findings-list" class="findings-list"></div>
         </div>
     </div>
 

@@ -8,7 +8,7 @@ document.getElementById('investor-form').addEventListener('submit', async functi
     results.style.display = 'none';
 
     try {
-        const response = await fetch('https://cryptic-mask.ignorelist.com/webhook/pitch-creator', {
+        const response = await fetch('https://cryptic-mask.twilightparadox.com/webhook/pitch-creator', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name })
